@@ -48,16 +48,16 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto max-w-5xl text-center px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-center gap-6 mb-8 animate-fade-in">
+        <div className="flex items-center justify-center gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8 animate-fade-in">
           <Image
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/407489151_864326991900661_8716464667277782353_n-mTrUn7q66NrNm9kAZsJJ3wtAuvcius.jpg"
             alt="MedVision Logo"
-            width={120}
-            height={120}
-            className="rounded-2xl shadow-2xl"
+            width={60}
+            height={60}
+            className="rounded-lg sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px] shadow-2xl"
           />
           <h1
-            className="text-5xl md:text-7xl font-bold text-white"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white"
             style={{ textShadow: "0 4px 12px rgba(0,0,0,0.6)" }}
           >
             MedVision
@@ -65,23 +65,23 @@ export function HeroSection() {
         </div>
 
         <p
-          className="text-xl md:text-2xl text-white max-w-4xl mx-auto leading-relaxed text-balance mb-8"
+          className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white max-w-4xl mx-auto leading-relaxed text-balance mb-6 sm:mb-8 px-2"
           style={{ textShadow: "0 2px 8px rgba(0,0,0,0.6)" }}
         >
           Empowering aspiring medical students from diverse backgrounds to achieve their dreams of studying medicine and
           dentistry at prestigious universities
         </p>
 
-        <div className="flex flex-wrap justify-center gap-4">
+        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-4">
           <a
             href="#founders"
-            className="px-8 py-4 bg-primary text-white font-semibold rounded-full hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl"
+            className="px-6 sm:px-8 py-3 sm:py-4 bg-primary text-white text-sm sm:text-base font-semibold rounded-full hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl"
           >
             Meet Our Founders
           </a>
           <a
             href="/services"
-            className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full hover:bg-white/20 transition-all border-2 border-white/30"
+            className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-sm text-white text-sm sm:text-base font-semibold rounded-full hover:bg-white/20 transition-all border-2 border-white/30"
           >
             Our Services
           </a>

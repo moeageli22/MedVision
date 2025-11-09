@@ -21,16 +21,16 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#0A2540] border-b border-white/10 shadow-lg">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-14 sm:h-16 md:h-20">
           <Link href="/" className="flex items-center gap-2 md:gap-3">
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/407489151_864326991900661_8716464667277782353_n-mTrUn7q66NrNm9kAZsJJ3wtAuvcius.jpg"
               alt="MedVision Logo"
-              width={40}
-              height={40}
-              className="rounded-lg md:w-[50px] md:h-[50px]"
+              width={32}
+              height={32}
+              className="rounded-lg sm:w-[40px] sm:h-[40px] md:w-[50px] md:h-[50px]"
             />
-            <span className="text-xl md:text-2xl font-bold text-white drop-shadow-lg">MedVision</span>
+            <span className="text-lg sm:text-xl md:text-2xl font-bold text-white drop-shadow-lg">MedVision</span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
@@ -69,7 +69,7 @@ export function Header() {
             className="lg:hidden text-white p-2"
             aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
           </button>
         </div>
       </div>
