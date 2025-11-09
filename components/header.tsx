@@ -24,7 +24,7 @@ export function Header() {
         <div className="flex items-center justify-between h-14 sm:h-16 md:h-20">
           <Link href="/" className="flex items-center gap-2 md:gap-3">
             <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/407489151_864326991900661_8716464667277782353_n-mTrUn7q66NrNm9kAZsJJ3wtAuvcius.jpg"
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/407489151_864326991900661_8716464667277782353_n-GlNlaW1dzP5B2Th3aaHXtoymClLkQg.jpg"
               alt="MedVision Logo"
               width={32}
               height={32}
