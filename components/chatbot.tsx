@@ -17,18 +17,17 @@ export function Chatbot() {
 
   return (
     <>
-      <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-2">
+      <div className="fixed bottom-4 right-4 z-[9999] flex flex-col items-end gap-2 pointer-events-none">
         {!isOpen && (
-          <div className="relative rounded-xl bg-gray-900 px-3 py-2 text-white shadow-lg max-w-[180px]">
+          <div className="relative rounded-xl bg-gray-900 px-3 py-2 text-white shadow-lg max-w-[180px] pointer-events-auto">
             <p className="text-xs font-medium">Hi, I'm MedVision Bot! Do you need help?</p>
-            {/* Speech bubble pointer pointing down to bot */}
             <div className="absolute -bottom-1.5 right-6 h-0 w-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-gray-900"></div>
           </div>
         )}
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-lg transition-all hover:scale-110 hover:shadow-xl"
+          className="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-lg transition-all hover:scale-110 hover:shadow-xl pointer-events-auto"
           aria-label="Toggle chatbot"
         >
           {isOpen ? (
@@ -47,16 +46,13 @@ export function Chatbot() {
       </div>
 
       {isOpen && (
-        <div className="fixed bottom-24 right-4 z-50 w-[calc(100vw-2rem)] max-w-sm rounded-lg bg-white shadow-2xl">
-          {/* Header */}
+        <div className="fixed bottom-24 right-4 z-[9999] w-[calc(100vw-2rem)] max-w-sm rounded-lg bg-white shadow-2xl">
           <div className="rounded-t-lg bg-gradient-to-r from-blue-600 to-blue-800 px-4 py-3">
             <h3 className="text-base font-semibold text-white">MedVision Assistant</h3>
             <p className="text-xs text-blue-100">Need help?</p>
           </div>
 
-          {/* Chat Content */}
           <div className="p-4">
-            {/* Welcome Message */}
             <div className="mb-3 rounded-lg bg-blue-50 p-3">
               <p className="text-xs text-gray-800">
                 <span className="font-semibold">Welcome to MedVision!</span>
@@ -65,7 +61,6 @@ export function Chatbot() {
               </p>
             </div>
 
-            {/* Navigation Options */}
             <div className="space-y-2">
               {navigationOptions.map((option) => (
                 <Link
@@ -80,7 +75,6 @@ export function Chatbot() {
               ))}
             </div>
 
-            {/* Additional Help Text */}
             <div className="mt-3 rounded-lg bg-gray-50 p-2.5">
               <p className="text-xs text-gray-600">
                 Need more help? Contact us at{" "}
