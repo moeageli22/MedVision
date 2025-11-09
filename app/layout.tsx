@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     siteName: "MedVision",
     images: [
       {
-        url: "/medvision-og-image.jpg",
+        url: "/medvision-logo.jpg",
         width: 1200,
-        height: 630,
+        height: 1200,
         alt: "MedVision Logo",
       },
     ],
@@ -33,24 +33,11 @@ export const metadata: Metadata = {
     title: "MedVision - Empowering Future Doctors",
     description:
       "MedVision is a non-profit organisation supporting students from diverse backgrounds to study medicine and dentistry at prestigious universities.",
-    images: ["/medvision-og-image.jpg"],
+    images: ["/medvision-logo.jpg"],
   },
   icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
+    icon: "/medvision-logo.jpg",
+    apple: "/medvision-logo.jpg",
   },
 }
 
