@@ -123,3 +123,38 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Add custom animations for hero section and smooth transitions */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 1s ease-in forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Navy color for overlays */
+  .bg-navy {
+    background-color: oklch(0.25 0.05 250);
+  }
+
+  .bg-navy\/70 {
+    background-color: oklch(0.25 0.05 250 / 0.7);
+  }
+
+  .bg-navy\/60 {
+    background-color: oklch(0.25 0.05 250 / 0.6);
+  }
+
+  .bg-navy\/80 {
+    background-color: oklch(0.25 0.05 250 / 0.8);
+  }
+}
