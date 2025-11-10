@@ -13,15 +13,36 @@ import Image from "next/image"
 export default function NewsletterPage() {
   const [email, setEmail] = useState("")
   const [isSubscribed, setIsSubscribed] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (email) {
-      setIsSubscribed(true)
-      setTimeout(() => {
-        setIsSubscribed(false)
-        setEmail("")
-      }, 5000)
+      setIsLoading(true)
+      try {
+        const response = await fetch("/api/newsletter/subscribe", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        })
+
+        if (response.ok) {
+          setIsSubscribed(true)
+          setTimeout(() => {
+            setIsSubscribed(false)
+            setEmail("")
+          }, 5000)
+        } else {
+          alert("Failed to subscribe. Please try again.")
+        }
+      } catch (error) {
+        console.error("[v0] Subscription error:", error)
+        alert("An error occurred. Please try again.")
+      } finally {
+        setIsLoading(false)
+      }
     }
   }
 
@@ -87,10 +108,20 @@ export default function NewsletterPage() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
+                    disabled={isLoading}
                   />
-                  <Button type="submit" size="lg" className="h-12 px-8">
-                    <Bell className="w-4 h-4 mr-2" />
-                    Subscribe
+                  <Button type="submit" size="lg" className="h-12 px-8" disabled={isLoading}>
+                    {isLoading ? (
+                      <>
+                        <span className="animate-spin mr-2">⏳</span>
+                        Subscribing...
+                      </>
+                    ) : (
+                      <>
+                        <Bell className="w-4 h-4 mr-2" />
+                        Subscribe
+                      </>
+                    )}
                   </Button>
                 </form>
               </div>
