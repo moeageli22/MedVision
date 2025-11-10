@@ -20,6 +20,7 @@ export default function NewsletterPage() {
     if (email) {
       setIsLoading(true)
       try {
+        console.log("[v0] Submitting newsletter subscription for:", email)
         const response = await fetch("/api/newsletter/subscribe", {
           method: "POST",
           headers: {
@@ -28,6 +29,9 @@ export default function NewsletterPage() {
           body: JSON.stringify({ email }),
         })
 
+        const data = await response.json()
+        console.log("[v0] Newsletter subscription response:", data)
+
         if (response.ok) {
           setIsSubscribed(true)
           setTimeout(() => {
@@ -35,7 +39,7 @@ export default function NewsletterPage() {
             setEmail("")
           }, 5000)
         } else {
-          alert("Failed to subscribe. Please try again.")
+          alert(data.error || "Failed to subscribe. Please try again.")
         }
       } catch (error) {
         console.error("[v0] Subscription error:", error)
