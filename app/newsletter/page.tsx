@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Mail, BookOpen, Calendar, Users, Award, Bell } from "lucide-react"
 import Image from "next/image"
+import { subscribeToNewsletter } from "@/app/actions/newsletter"
 
 export default function NewsletterPage() {
   const [email, setEmail] = useState("")
@@ -20,30 +21,20 @@ export default function NewsletterPage() {
     if (email) {
       setIsLoading(true)
       try {
-        console.log("[v0] Submitting newsletter subscription for:", email)
-        const response = await fetch("/api/newsletter/subscribe", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email }),
-        })
+        const result = await subscribeToNewsletter(email)
 
-        const data = await response.json()
-        console.log("[v0] Newsletter subscription response:", data)
-
-        if (response.ok) {
+        if (result.success) {
           setIsSubscribed(true)
           setTimeout(() => {
             setIsSubscribed(false)
             setEmail("")
           }, 5000)
         } else {
-          alert(data.error || "Failed to subscribe. Please try again.")
+          alert(result.error || "Failed to subscribe. Please try again.")
         }
       } catch (error) {
-        console.error("[v0] Subscription error:", error)
-        alert("An error occurred. Please try again.")
+        console.error("Subscription error:", error)
+        alert("Failed to subscribe. Please check your email and try again.")
       } finally {
         setIsLoading(false)
       }

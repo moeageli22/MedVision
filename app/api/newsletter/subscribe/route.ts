@@ -21,53 +21,62 @@ export async function POST(request: Request) {
 
     console.log("[v0] Processing newsletter subscription for:", email)
 
-    // Email to subscriber (confirmation)
-    await resend.emails.send({
-      from: "MedVision <onboarding@resend.dev>",
-      to: email,
-      subject: "Welcome to MedVision Newsletter! 🎓",
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <div style="background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0;">
-            <h1 style="margin: 0; font-size: 32px;">MedVision</h1>
-            <h2 style="margin: 10px 0 0 0;">Welcome to Our Community!</h2>
+    try {
+      const subscriberEmail = await resend.emails.send({
+        from: "MedVision <onboarding@resend.dev>",
+        to: email,
+        subject: "Welcome to MedVision Newsletter! 🎓",
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+            <div style="background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0;">
+              <h1 style="margin: 0; font-size: 32px;">MedVision</h1>
+              <h2 style="margin: 10px 0 0 0;">Welcome to Our Community!</h2>
+            </div>
+            <div style="background: #f9fafb; padding: 30px; border-radius: 0 0 10px 10px;">
+              <h2 style="color: #1e40af;">Thank You for Subscribing!</h2>
+              <p>Hi there,</p>
+              <p>We're thrilled to have you join the MedVision community! Your subscription has been successfully confirmed.</p>
+              <p><strong>You'll now receive:</strong></p>
+              <ul style="line-height: 1.8;">
+                <li>Weekly study tips and UCAT preparation strategies</li>
+                <li>Important application deadlines and key dates</li>
+                <li>Success stories from current medical students</li>
+                <li>Exclusive resources and practice materials</li>
+              </ul>
+              <p>Stay tuned for our next newsletter with valuable insights to help you achieve your dream of studying medicine!</p>
+              <p style="margin-top: 30px;">Best regards,<br><strong>The MedVision Team</strong></p>
+            </div>
+            <div style="text-align: center; padding: 20px; color: #6b7280; font-size: 14px;">
+              <p>© 2025 MedVision. Empowering Future Doctors.</p>
+              <p>Contact us: rasimizori@hotmail.co.uk</p>
+            </div>
           </div>
-          <div style="background: #f9fafb; padding: 30px; border-radius: 0 0 10px 10px;">
-            <h2 style="color: #1e40af;">Thank You for Subscribing!</h2>
-            <p>Hi there,</p>
-            <p>We're thrilled to have you join the MedVision community! Your subscription has been successfully confirmed.</p>
-            <p><strong>You'll now receive:</strong></p>
-            <ul style="line-height: 1.8;">
-              <li>Weekly study tips and UCAT preparation strategies</li>
-              <li>Important application deadlines and key dates</li>
-              <li>Success stories from current medical students</li>
-              <li>Exclusive resources and practice materials</li>
-            </ul>
-            <p>Stay tuned for our next newsletter with valuable insights to help you achieve your dream of studying medicine!</p>
-            <p style="margin-top: 30px;">Best regards,<br><strong>The MedVision Team</strong></p>
-          </div>
-          <div style="text-align: center; padding: 20px; color: #6b7280; font-size: 14px;">
-            <p>© 2025 MedVision. Empowering Future Doctors.</p>
-            <p>Contact us: rasimizori@hotmail.co.uk</p>
-          </div>
-        </div>
-      `,
-    })
+        `,
+      })
+      console.log("[v0] Subscriber email sent successfully:", subscriberEmail)
+    } catch (subscriberError) {
+      console.error("[v0] Failed to send subscriber email:", subscriberError)
+      // Don't fail the request, continue to send admin notification
+    }
 
-    // Email to admin (notification)
-    await resend.emails.send({
-      from: "MedVision <onboarding@resend.dev>",
-      to: ["rasimizori@hotmail.co.uk", "mohammadmunir2004@gmail.com"],
-      subject: `New Newsletter Subscription from ${email}`,
-      html: `
-        <div style="font-family: Arial, sans-serif;">
-          <h2 style="color: #1e40af;">🎉 New Newsletter Subscription</h2>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Date:</strong> ${new Date().toLocaleString("en-GB", { dateStyle: "full", timeStyle: "short" })}</p>
-          <p>Your community is growing! 🚀</p>
-        </div>
-      `,
-    })
+    try {
+      const adminEmail = await resend.emails.send({
+        from: "MedVision <onboarding@resend.dev>",
+        to: ["rasimizori@hotmail.co.uk", "mohammadmunir2004@gmail.com"],
+        subject: `New Newsletter Subscription from ${email}`,
+        html: `
+          <div style="font-family: Arial, sans-serif;">
+            <h2 style="color: #1e40af;">🎉 New Newsletter Subscription</h2>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Date:</strong> ${new Date().toLocaleString("en-GB", { dateStyle: "full", timeStyle: "short" })}</p>
+            <p>Your community is growing! 🚀</p>
+          </div>
+        `,
+      })
+      console.log("[v0] Admin email sent successfully:", adminEmail)
+    } catch (adminError) {
+      console.error("[v0] Failed to send admin email:", adminError)
+    }
 
     return NextResponse.json({
       success: true,
