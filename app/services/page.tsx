@@ -2,10 +2,18 @@ import { Header } from "@/components/header"
 import { MedVisionAd } from "@/components/medvision-ad"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { MessageCircle, Users, GraduationCap, Brain, Target } from "lucide-react"
+import { MessageCircle, Users, GraduationCap, Brain, Target, FileText } from "lucide-react"
 import Image from "next/image"
 
 const services = [
+  {
+    title: "Personal Statement Guidance",
+    description:
+      "Expert guidance on crafting compelling personal statements that showcase your passion for medicine and stand out to admissions teams.",
+    icon: FileText,
+    href: "/services/personal-statement",
+    features: ["Statement Review", "Writing Tips", "Examples & Templates"],
+  },
   {
     title: "UCAT Preparation",
     description:
@@ -58,7 +66,7 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12 md:mb-16">
             {services.map((service) => (
               <div
                 key={service.title}
