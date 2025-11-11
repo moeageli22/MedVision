@@ -51,7 +51,7 @@ export default function ServicesPage() {
               <GraduationCap className="w-12 h-12 md:w-16 md:h-16 text-primary mx-auto mb-3 md:mb-4" />
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 md:mb-6 text-balance px-4">
-              Aspiring Medical Students
+              Aspiring Medical Students 🏃‍♂️🚀
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed px-4">
               We provide comprehensive support to help you succeed in your medical school application journey. From UCAT
@@ -97,7 +97,7 @@ export default function ServicesPage() {
 
           <div className="bg-primary/5 rounded-2xl p-6 md:p-10 text-center border-2 border-primary/20">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 md:mb-4">
-              Ready to Start Your Journey?
+              Ready to Start Your Journey? ⚡
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 md:mb-8 max-w-2xl mx-auto">
               Join thousands of aspiring medical students who have successfully navigated their path to medical school

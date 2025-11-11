@@ -4,7 +4,7 @@ import Image from "next/image"
 
 export function Footer() {
   return (
-    <footer className="bg-[#0f172a] text-white">
+    <footer className="bg-black text-white border-t border-medvision-blue/20">
       <div className="mx-auto max-w-7xl px-4 py-8 sm:py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           {/* Logo and Description */}
@@ -17,14 +17,16 @@ export function Footer() {
                 height={40}
                 className="rounded-lg"
               />
-              <h3 className="text-xl font-bold">MedVision</h3>
+              {/* Updated heading color */}
+              <h3 className="text-xl font-bold text-medvision-blue">MedVision</h3>
             </div>
             <p className="text-sm text-gray-400">Empowering aspiring medical students to achieve their dreams.</p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold mb-4 text-lg">Quick Links</h4>
+            {/* Updated heading color */}
+            <h4 className="font-semibold mb-4 text-lg text-medvision-blue">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/" className="text-gray-400 hover:text-white transition-colors">
@@ -51,7 +53,8 @@ export function Footer() {
 
           {/* Resources */}
           <div>
-            <h4 className="font-semibold mb-4 text-lg">Resources</h4>
+            {/* Updated heading color */}
+            <h4 className="font-semibold mb-4 text-lg text-medvision-blue">Resources</h4>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/newsletter" className="text-gray-400 hover:text-white transition-colors">
@@ -78,11 +81,12 @@ export function Footer() {
 
           {/* Contact & Social */}
           <div>
-            <h4 className="font-semibold mb-4 text-lg">Connect With Us</h4>
+            {/* Updated heading color */}
+            <h4 className="font-semibold mb-4 text-lg text-medvision-blue">Connect With Us</h4>
             <div className="space-y-3">
               <a
                 href="mailto:rasimizori@hotmail.co.uk"
-                className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors"
+                className="flex items-center gap-2 text-sm text-gray-400 hover:text-medvision-blue transition-colors"
               >
                 <Mail className="w-4 h-4" />
                 rasimizori@hotmail.co.uk
@@ -92,7 +96,7 @@ export function Footer() {
                   href="https://www.linkedin.com/company/medvisionn"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
+                  className="text-gray-400 hover:text-medvision-blue transition-colors"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="w-5 h-5" />
@@ -101,7 +105,7 @@ export function Footer() {
                   href="https://www.instagram.com/medvisionn"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-pink-400 transition-colors"
+                  className="text-gray-400 hover:text-medvision-blue transition-colors"
                   aria-label="Instagram"
                 >
                   <Instagram className="w-5 h-5" />
@@ -112,7 +116,8 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-8 pt-8 border-t border-gray-800">
+        {/* Updated border color */}
+        <div className="mt-8 pt-8 border-t border-medvision-blue/20">
           <div className="flex flex-col sm:flex-row justify-center items-center text-sm text-gray-400">
             <p>&copy; 2025 MedVision. All rights reserved.</p>
           </div>

@@ -8,7 +8,7 @@ export default function AboutPage() {
       <Header />
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-6xl">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-8 text-balance">About MedVision</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-8 text-balance">About MedVision ⚡</h1>
 
           <div className="grid md:grid-cols-2 gap-8 items-start mb-12">
             <div className="space-y-6">
@@ -19,7 +19,7 @@ export default function AboutPage() {
               </p>
 
               <div>
-                <h2 className="text-2xl font-bold text-foreground mb-4">Our Mission</h2>
+                <h2 className="text-2xl font-bold text-foreground mb-4">Our Mission 🚀</h2>
                 <p className="text-muted-foreground leading-relaxed">
                   We believe that everyone, regardless of their background, should have access to quality guidance and
                   resources to pursue their dreams of becoming doctors and dentists. Through mentorship, workshops, and
@@ -40,7 +40,7 @@ export default function AboutPage() {
           </div>
 
           <div className="prose prose-lg max-w-none">
-            <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">What We Offer</h2>
+            <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">What We Offer ✨</h2>
 
             <ul className="list-none text-muted-foreground space-y-3 mb-6">
               <li className="flex items-start gap-3">
@@ -69,7 +69,7 @@ export default function AboutPage() {
               </li>
             </ul>
 
-            <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">Our Impact</h2>
+            <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">Our Impact 📈</h2>
             <p className="text-muted-foreground mb-6 leading-relaxed">
               Since our founding, we've helped hundreds of students from diverse backgrounds gain admission to medical
               and dental schools across the UK. We're proud to have created a supportive community where students can

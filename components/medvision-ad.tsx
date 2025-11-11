@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button"
-import { Users, GraduationCap, Sparkles } from "lucide-react"
+import { Users, GraduationCap } from "lucide-react"
 import Link from "next/link"
 
 export function MedVisionAd() {
@@ -13,7 +13,7 @@ export function MedVisionAd() {
             </div>
             <div className="text-center md:text-left">
               <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-foreground mb-1 flex items-center gap-2 justify-center md:justify-start">
-                <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-primary" />
+                <span className="text-primary">⚡</span>
                 Join MedVision Community
               </h3>
               <p className="text-xs sm:text-sm md:text-base text-muted-foreground">

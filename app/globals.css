@@ -4,40 +4,26 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated to cream/beige theme similar to reference site */
-  --background: oklch(0.96 0.01 75);
-  --foreground: oklch(0.2 0.02 250);
-  --card: oklch(0.98 0.005 75);
-  --card-foreground: oklch(0.2 0.02 250);
-  --popover: oklch(0.98 0.005 75);
-  --popover-foreground: oklch(0.2 0.02 250);
-  --primary: oklch(0.25 0.05 0);
-  --primary-foreground: oklch(0.98 0.01 75);
-  --secondary: oklch(0.85 0.01 75);
-  --secondary-foreground: oklch(0.2 0.02 250);
-  --muted: oklch(0.88 0.01 75);
-  --muted-foreground: oklch(0.45 0.02 250);
-  --accent: oklch(0.3 0.06 0);
-  --accent-foreground: oklch(0.98 0.01 75);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.98 0.01 75);
-  --border: oklch(0.82 0.01 75);
-  --input: oklch(0.9 0.01 75);
-  --ring: oklch(0.25 0.05 0);
-  --chart-1: oklch(0.25 0.05 0);
-  --chart-2: oklch(0.3 0.06 0);
-  --chart-3: oklch(0.5 0.1 200);
-  --chart-4: oklch(0.45 0.08 260);
-  --chart-5: oklch(0.55 0.1 220);
-  --radius: 0.5rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #0a0a0a;
+  --card-foreground: #ffffff;
+  --popover: #0a0a0a;
+  --popover-foreground: #ffffff;
+  --primary: #4a9fd8;
+  --primary-foreground: #ffffff;
+  --secondary: #2b7fb5;
+  --secondary-foreground: #ffffff;
+  --muted: #1a1a1a;
+  --muted-foreground: #9ca3af;
+  --accent: #4a9fd8;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #1f2937;
+  --input: #1a1a1a;
+  --ring: #4a9fd8;
+  --radius: 1rem;
 }
 
 .dark {
@@ -76,7 +62,6 @@
 }
 
 @theme inline {
-  /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -120,14 +105,15 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
   }
 }
 
-/* Add custom animations for hero section and smooth transitions */
+/* Adding futuristic animations and effects */
 @layer utilities {
+  /* Fade in animation */
   .animate-fade-in {
-    animation: fadeIn 1s ease-in forwards;
+    animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
   @keyframes fadeIn {
@@ -141,20 +127,174 @@
     }
   }
 
-  /* Navy color for overlays */
-  .bg-navy {
-    background-color: oklch(0.25 0.05 250);
+  /* Slide in from left */
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
-  .bg-navy\/70 {
-    background-color: oklch(0.25 0.05 250 / 0.7);
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 
-  .bg-navy\/60 {
-    background-color: oklch(0.25 0.05 250 / 0.6);
+  /* Slide in from right */
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 
-  .bg-navy\/80 {
-    background-color: oklch(0.25 0.05 250 / 0.8);
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Scale in animation */
+  .animate-scale-in {
+    animation: scaleIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Glow effect */
+  .glow-effect {
+    box-shadow: 0 0 20px rgba(74, 159, 216, 0.3), 0 0 40px rgba(74, 159, 216, 0.1);
+  }
+
+  .glow-effect-strong {
+    box-shadow: 0 0 30px rgba(74, 159, 216, 0.5), 0 0 60px rgba(74, 159, 216, 0.2);
+  }
+
+  /* Glass morphism effect */
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, #4a9fd8 0%, #2b7fb5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Gradient backgrounds */
+  .bg-gradient-medvision {
+    background: linear-gradient(135deg, #2b7fb5 0%, #4a9fd8 100%);
+  }
+
+  .bg-gradient-medvision-radial {
+    background: radial-gradient(circle at center, #4a9fd8 0%, #2b7fb5 50%, #1a5a8a 100%);
+  }
+
+  /* Hover lift effect */
+  .hover-lift {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(74, 159, 216, 0.2);
+  }
+
+  /* Pulse animation for attention */
+  .animate-pulse-slow {
+    animation: pulseSlow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulseSlow {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+
+  /* Adding bounce animation for rocket emoji */
+  .animate-bounce-slow {
+    animation: bounceSlow 2s ease-in-out infinite;
+  }
+
+  @keyframes bounceSlow {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Adding color utilities for MedVision blue shades */
+  .text-medvision-blue {
+    color: #4a9fd8;
+  }
+
+  .text-medvision-blue-dark {
+    color: #2b7fb5;
+  }
+
+  .bg-medvision-blue {
+    background-color: #4a9fd8;
+  }
+
+  .bg-medvision-blue-dark {
+    background-color: #2b7fb5;
+  }
+
+  .border-medvision-blue {
+    border-color: #4a9fd8;
+  }
+
+  .border-medvision-blue-dark {
+    border-color: #2b7fb5;
+  }
+
+  /* Adding animated color cycle effect for MedVision text */
+  .animate-color-cycle {
+    animation: colorCycle 4s ease-in-out infinite;
+  }
+
+  @keyframes colorCycle {
+    0%,
+    100% {
+      color: #ffffff;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    25% {
+      color: #4a9fd8;
+      text-shadow: 0 0 20px rgba(74, 159, 216, 0.8);
+    }
+    50% {
+      color: #2b7fb5;
+      text-shadow: 0 0 20px rgba(43, 127, 181, 0.8);
+    }
+    75% {
+      color: #4a9fd8;
+      text-shadow: 0 0 20px rgba(74, 159, 216, 0.8);
+    }
   }
 }

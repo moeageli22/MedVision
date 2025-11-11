@@ -44,44 +44,58 @@ export function HeroSection() {
       ))}
 
       {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/70 to-navy/85" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/80 to-black/90" />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto max-w-5xl text-center px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-center gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8 animate-fade-in">
+        <div
+          className={`flex items-center justify-center gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8 transition-all duration-1000 ${
+            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-10"
+          }`}
+        >
           <Image
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/407489151_864326991900661_8716464667277782353_n-mTrUn7q66NrNm9kAZsJJ3wtAuvcius.jpg"
             alt="MedVision Logo"
             width={60}
             height={60}
-            className="rounded-lg sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px] shadow-2xl"
+            className={`rounded-lg sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px] shadow-2xl transition-all duration-1000 delay-300 ${
+              isLoaded ? "scale-100 rotate-0" : "scale-0 -rotate-180"
+            }`}
           />
           <h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white"
-            style={{ textShadow: "0 4px 12px rgba(0,0,0,0.6)" }}
+            className={`text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold animate-color-cycle transition-all duration-1000 delay-500 ${
+              isLoaded ? "scale-100 opacity-100" : "scale-50 opacity-0"
+            }`}
+            style={{ textShadow: "0 2px 8px rgba(0,0,0,0.6)" }}
           >
-            MedVision
+            MedVision 🚀
           </h1>
         </div>
 
         <p
-          className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white max-w-4xl mx-auto leading-relaxed text-balance mb-6 sm:mb-8 px-2"
+          className={`text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white max-w-4xl mx-auto leading-relaxed text-balance mb-6 sm:mb-8 px-2 transition-all duration-1000 delay-700 ${
+            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
           style={{ textShadow: "0 2px 8px rgba(0,0,0,0.6)" }}
         >
           Empowering aspiring medical students from diverse backgrounds to achieve their dreams of studying medicine and
           dentistry at prestigious universities
         </p>
 
-        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-4">
+        <div
+          className={`flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-4 transition-all duration-1000 delay-1000 ${
+            isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
           <a
             href="#founders"
-            className="px-6 sm:px-8 py-3 sm:py-4 bg-primary text-white text-sm sm:text-base font-semibold rounded-full hover:bg-primary/90 transition-all shadow-lg hover:shadow-xl"
+            className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-medvision text-white text-sm sm:text-base font-semibold rounded-full hover:shadow-[0_0_30px_rgba(74,159,216,0.6)] transition-all shadow-lg"
           >
             Meet Our Founders
           </a>
           <a
             href="/services"
-            className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-sm text-white text-sm sm:text-base font-semibold rounded-full hover:bg-white/20 transition-all border-2 border-white/30"
+            className="px-6 sm:px-8 py-3 sm:py-4 bg-white/5 backdrop-blur-sm text-white text-sm sm:text-base font-semibold rounded-full hover:bg-white/10 transition-all border-2 border-medvision-blue"
           >
             Our Services
           </a>
