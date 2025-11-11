@@ -21,7 +21,7 @@ const founders = [
     name: "Mr. Omar Ba-Abbad",
     role: "Final-year medical student at King's College London",
     degree: "MSc Global Health Policy",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-71QWZ4wiSBfatxr8ErDrcLeHVZBN24.png",
+    image: "/omar-cropped.png",
     linkedin: "https://www.linkedin.com/in/omar-ba-abbad-a38356206/",
   },
 ]
@@ -32,10 +32,6 @@ export function Founders() {
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">Meet Our Founders</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Three final-year medical students from King's College London dedicated to widening participation in medicine
-            and dentistry.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">

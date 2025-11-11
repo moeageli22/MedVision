@@ -36,10 +36,10 @@ export function Testimonials() {
     <section id="testimonials" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance medvision-text-animation">
-            Student Success Stories
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance animate-color-cycle">
+            Student Success Stories 🚀
           </h2>
-          <p className="text-xl text-muted-foreground">Hear from students we've helped</p>
+          <p className="text-xl text-muted-foreground">Hear from some of the students we have helped</p>
         </div>
 
         <div className="max-w-4xl mx-auto">

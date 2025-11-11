@@ -14,10 +14,10 @@ export function MedVisionAd() {
             <div className="text-center md:text-left">
               <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-foreground mb-1 flex items-center gap-2 justify-center md:justify-start">
                 <span className="text-primary">⚡</span>
-                Join MedVision Community
+                Join THE MedVision Community
               </h3>
               <p className="text-xs sm:text-sm md:text-base text-muted-foreground">
-                Connect with aspiring medical students and get expert guidance
+                Connect with aspiring medical students and receive expert guidance
               </p>
             </div>
           </div>

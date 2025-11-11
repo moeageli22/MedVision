@@ -54,8 +54,7 @@ export default function ServicesPage() {
               Aspiring Medical Students 🏃‍♂️🚀
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed px-4">
-              We provide comprehensive support to help you succeed in your medical school application journey. From UCAT
-              preparation to interview coaching, we're here every step of the way.
+              Resources and guidance for your medical/dental school journey
             </p>
           </div>
 

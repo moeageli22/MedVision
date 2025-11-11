@@ -1,6 +1,6 @@
 import { Header } from "@/components/header"
 import { MedVisionAd } from "@/components/medvision-ad"
-import Image from "next/image"
+import { MediaSlideshow } from "@/components/media-slideshow"
 
 export default function AboutPage() {
   return (
@@ -28,15 +28,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="relative w-full h-64 md:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-lg">
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-HpOIlXB2cKfqrN2DfqyR8fpVMOJ0so.png"
-                alt="Medical students in a lecture"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
+            <MediaSlideshow />
           </div>
 
           <div className="prose prose-lg max-w-none">

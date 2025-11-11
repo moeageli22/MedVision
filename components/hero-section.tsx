@@ -78,8 +78,8 @@ export function HeroSection() {
           }`}
           style={{ textShadow: "0 2px 8px rgba(0,0,0,0.6)" }}
         >
-          Empowering aspiring medical students from diverse backgrounds to achieve their dreams of studying medicine and
-          dentistry at prestigious universities
+          A student-led non-profit founded by three final-year medical students, committed to bridging the gap between
+          talent and opportunity, and supporting aspiring doctors and dentists to access top medical and dental schools.
         </p>
 
         <div

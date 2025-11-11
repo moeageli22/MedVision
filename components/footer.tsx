@@ -20,7 +20,7 @@ export function Footer() {
               {/* Updated heading color */}
               <h3 className="text-xl font-bold text-medvision-blue">MedVision</h3>
             </div>
-            <p className="text-sm text-gray-400">Empowering aspiring medical students to achieve their dreams.</p>
+            <p className="text-sm text-gray-400">Bridging the gap between talent and opportunity</p>
           </div>
 
           {/* Quick Links */}
@@ -71,7 +71,7 @@ export function Footer() {
                   href="https://chat.whatsapp.com/JxF84uZs73cDbJdpLB3Ujp"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-medvision-blue transition-colors"
                 >
                   WhatsApp Community
                 </Link>
